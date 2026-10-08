@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЯМЭЙ ДЕКОР — Ремонт «под ключ», дизайн и отделка в Кыргызстане</title>
+    <!-- Подключение шрифтов и иконок -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0A192F;        /* Темно-синий фон */
+            --accent: #1D4ED8;         /* Фирменный синий цвет */
+            --accent-hover: #1E40AF;   /* Темно-синий при наведении */
+            --accent-light: #EFF6FF;   /* Светло-синяя подложка */
+            --bg-light: #F8FAFC;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --white: #FFFFFF;
+            --card-border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Contacts Bar */
+        .top-bar {
+            background-color: var(--primary);
+            color: #94A3B8;
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-contacts {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-contacts a {
+            color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+
+        .top-contacts a:hover {
+            color: #60A5FA;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 42px;
+            height: 42px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-symbol svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--accent);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            color: #60A5FA;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: #94A3B8;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+            transform: translateY(-1px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: #60A5FA;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-align: center;
+            color: var(--text-main);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pricing Packages Section */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .package-card {
+            background: var(--white);
+            border: 2px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .package-card.popular {
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(29, 78, 216, 0.12);
+            transform: scale(1.03);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .package-name {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .package-price span {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .package-target {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .package-features li i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+
+        /* Table Section */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 40px;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .spec-table th, .spec-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .spec-table th {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .spec-table tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        .about-card {
+            background-color: var(--accent-light);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Guangzhou Special Offer */
+        .gz-banner {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 80px 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .gz-banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .gz-banner p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: #E2E8F0;
+        }
+
+        /* Contact Section */
+        .contact-form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--accent);
+        }
+
+        .phone-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .phone-card {
+            background: var(--accent-light);
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #94A3B8;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .packages-grid { grid-template-columns: 1fr; }
+            .package-card.popular { transform: none; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 32px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .top-bar-content { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Contacts Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div>г. Бишкек, Кыргызстан | Пн–Сб: 09:00 – 18:00</div>
+            <div class="top-contacts">
+                <a href="tel:+996709088804"><i class="fa-solid fa-phone"></i> +996 709 088 804</a>
+                <a href="https://wa.me/996555015180" target="_blank"><i class="fa-brands fa-whatsapp"></i> +996 555 015 180</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-nav">
+            <div class="logo-block">
+                <div class="logo-symbol">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M50 5 C30 30, 5 30, 5 50 C5 70, 30 70, 50 95 C70 70, 95 70, 95 50 C95 30, 70 30, 50 25 Z M50 25 C40 40, 25 40, 25 50 C25 60, 40 60, 50 75 C60 60, 75 60, 75 50 C75 40, 60 40, 50 25 Z" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">ЯМЭЙ ДЕКОР</span>
+                    <span class="logo-subtitle">ремонт «под ключ» | дизайн и отделка</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#packages">Пакеты и Цены</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#guangzhou">Мебель из Китая</a></li>
+            </ul>
+            <a href="#contact" class="btn-primary">Заказать ремонт</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Официальная компания в Бишкеке</div>
+                <h1 class="hero-title">Пакетный ремонт «под ключ» в Кыргызстане</h1>
+                <p class="hero-desc">Прозрачные фиксированные цены за м², полный комплекс строительных работ, закупка материалов и собственная гарантия. Поставка мебели напрямую из Гуанчжоу.</p>
+
+                <div class="hero-buttons">
+                    <a href="#packages" class="btn-primary">Выбрать пакет ремонта</a>
+                    <a href="https://wa.me/996555015180" target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>220 USD</h3>
+                    <p>Базовая стоимость за м² застройки</p>
+                </div>
+                <div class="stat-item">
+                    <h3>39 дней</h3>
+                    <p>Срок ремонта объектов до 50 м²</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2 года</h3>
+                    <p>Официальная гарантия на работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <div class="container">
+            <h2 class="section-title">Пакеты ремонта «Под Ключ»</h2>
+            <p class="section-subtitle">Готовые комплексные решения по фиксированной стоимости за квадратный метр площади застройки</p>
+
+            <div class="packages-grid">
+                <!-- Эконом -->
+                <div class="package-card">
+                    <div class="package-name">Пакет «Эконом»</div>
+                    <div class="package-price">220 USD <span>/ м²</span></div>
+                    <div class="package-target"><strong>Назначение:</strong> Аренда, временное жильё, инвестиционная недвижимость</div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Потолки:</strong> Натяжной потолок в санузле, шпаклёвка и матовая краска в остальных комнатах</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Стены:</strong> Частичное выравнивание, шпаклевка 2 слоя + латексная краска</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Полы:</strong> Ламинат в комнатах, плитка 600×600 в санузле/кухне</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Сантехника/Электрика:</strong> Частичная модернизация проводки, обычная сантехника</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Мебель:</strong> Напольный кухонный шкаф (грантиная столешница) до 3 м</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Двери:</strong> Композитные двери без покраски, пластиковые подоконники</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Гарантия:</strong> 1 год на весь ремонт</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="text-align: center;">Заказать Эконом</a>
+                </div>
+
+                <!-- Комфорт -->
+                <div class="package-card popular">
+                    <div class="popular-badge">Популярный выбор</div>
+                    <div class="package-name">Пакет «Комфорт»</div>
+                    <div class="package-price">260 USD <span>/ м²</span></div>
+                    <div class="package-target"><strong>Назначение:</strong> Постоянное семейное проживание, квартиры под свадьбу</div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Потолки:</strong> Гипсокартон с нишей под подсветку в гостиной, натяжной в санузле</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Стены:</strong> Выравнивание по всему дому, фирменная латексная краска / обои / ТВ-стена</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Полы:</strong> Глазурованная плитка / ламинат среднего класса, шпонированный плинтус</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Сантехника/Электрика:</strong> Трубы и кабели в штробах с ПВХ-гофрой, PPR-трубы</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Мебель:</strong> Цельный кухонный гарнитур (кварцевая столешница) до 8 м</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Двери:</strong> Двери из шпона, ниша для штор, гранитные подоконники</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Гарантия:</strong> 2 года на весь ремонт</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="text-align: center;">Заказать Комфорт</a>
+                </div>
+
+                <!-- Люкс -->
+                <div class="package-card">
+                    <div class="package-name">Пакет «Люкс»</div>
+                    <div class="package-price">300 USD <span>/ м²</span></div>
+                    <div class="package-target"><strong>Назначение:</strong> Улучшенное жильё, премиальные квартиры и виллы</div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> <strong>Потолки:</strong> Фигурные подвесные потолки по всему дому + LED-подсветка</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Стены:</strong> Выравнивание по маякам, акцентные стены из камня/дерева / декор. штукатурка</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Полы:</strong> Плитка и ламинат высокого класса, паркет / массив</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Сантехника/Электрика:</strong> Полная разводка, фирменные PPR-системы, премиум сантехника</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Мебель:</strong> Премиум гарнитур (кварцевая столешница) до 10 м</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Двери:</strong> Премиум двери из шпона, подоконники из искусственного камня</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Гарантия:</strong> 2 года на весь ремонт</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="text-align: center;">Заказать Люкс</a>
+                </div>
+            </div>
+
+            <!-- Detailed Specifications Table -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 26px; font-weight: 800; margin-bottom: 20px; text-align: center;">Детализация работ и материалов пакета «Эконом» (220 $/м²)</h3>
+                <div class="table-responsive">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Участок работ</th>
+                                <th>Вид работ</th>
+                                <th>Содержание работ и стандарты</th>
+                                <th>Основные материалы</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Работы по потолку</strong></td>
+                                <td>Подготовка основания / Гипсокартон / Латексная краска</td>
+                                <td>Удаление старого покрытия, подвесной потолок из гипсокартона с нишей для подсветки в гостиной, натяжной потолок в санузле/кухне.</td>
+                                <td>Гипсовый порошок, оцинкованный профиль, латексная краска (1 слой основы + 1 финишный), ПВХ-полотно.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Работы по стенам</strong></td>
+                                <td>Выравнивание и окраска / Плинтус</td>
+                                <td>Удаление отслоений, локальное выравнивание, шпаклёвка 2 слоя с шлифовкой, покраска, монтаж ПВХ-плинтуса.</td>
+                                <td>Цементно-песчаный раствор, латексная краска, ПВХ/композитный плинтус.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Работы по полу</strong></td>
+                                <td>Выравнивание / Укладка плитки и ламината</td>
+                                <td>Выравнивание пола в гостиной и спальнях, укладка противоскользящей плитки 600×600 на цементный раствор в кухне/санузле.</td>
+                                <td>Обычный ламинат, противоскользящая плитка среднего класса, затирка.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Сантехника и электрика</strong></td>
+                                <td>Проводка / Водопровод / Гидроизоляция</td>
+                                <td>Частичная модернизация электрики, замена труб PPR сваркой в санузле/кухне, гидроизоляция пола и стен на высоту 300 мм (испытание 48 ч).</td>
+                                <td>Обычный провод, PPR-трубы подачи и слива, полимерно-цементная гидроизоляционная обмазка.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Кухня и санузел</strong></td>
+                                <td>Сантехника и гарнитур</td>
+                                <td>Установка унитаза, раковины, душа, смесителей. Напольный кухонный шкаф с гранитной столешницей (длина до 3 м).</td>
+                                <td>Корпус из ЛДСП, гранитная столешница, стандартная сантехника и фурнитура.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Двери, окна и финиш</strong></td>
+                                <td>Двери / Подоконники / Уборка</td>
+                                <td>Установка композитных дверей без покраски, установка пластиковых подоконников, вывоза мусора и уборка 1 раз после сдачи.</td>
+                                <td>Композитные двери, пластиковые подоконники.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="features">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align: left;">О компании ЯМЭЙ ДЕКОР</h2>
+                    <p><strong>«ЯМЭЙ ДЕКОР»</strong> — официальная ремонтная компания в Бишкеке, использующая стандартизированные международные строительные процессы.</p>
+                    <p>Наша головная компания «Гуйчжоу ЯМЭЙ Декор» работает в отрасли с 1997 года (уставный капитал 50 млн юаней). Мы переносим почти 30-летний опыт реализации масштабных объектов в Шанхае, Гуанчжоу и Шэньчжэне на рынок Кыргызстана.</p>
+                    <p>Мы не используем схемы с перекладыванием ответственности: один договор, фиксированная смета, четкие гарантийные обязательства.</p>
+                </div>
+                <div class="about-card">
+                    <h3 style="margin-bottom: 15px; color: var(--accent);">Наша философия</h3>
+                    <p>Мы не конкурируем за счет искусственного занижения цен. Благодаря профессионализму, прозрачной смете и ответственности мы хотим стать самой надежной ремонтной компанией в Центральной Азии.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages">
+        <div class="container">
+            <h2 class="section-title">Преимущества работы с нами</h2>
+            <p class="section-subtitle">Почему клиенты выбирают нас вместо частных бригад</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>Единый подрядчик</h3>
+                    <p>Все процессы (электрика, плитка, малярные работы) контролирует одна компания. Вам не нужно искать разных мастеров.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3>Фиксированная смета</h3>
+                    <p>Смета утверждается до начала работ. Расходы зафиксированы в договоре и не растут в процессе ремонта.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Гарантия до 2 лет</h3>
+                    <p>Мы несем ответственность за свой ремонт. В случае дефектов по нашей вине бесплатно устраняем их по гарантии.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3>Закупка материалов</h3>
+                    <p>Сами организуем закупку, доставку и контроль качества всех строительных и отделочных материалов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guangzhou Special Banner -->
+    <section id="guangzhou" class="container">
+        <div class="gz-banner">
+            <h2>Дополнительная услуга: Мебель напрямую из Гуанчжоу</h2>
+            <p>Помогаем заказать диваны, кровати, корпусной гарнитур и элементы интерьера напрямую с крупнейших фабрик Китая. Гораздо больше вариантов, стилей и размеров по лучшим ценам.</p>
+            <a href="#contact" class="btn-primary">Узнать подробности</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Получить расчет и консультацию</h2>
+            <p class="section-subtitle">Оставьте заявку, и мы проконсультируем вас по поводу сроков и предварительной сметы вашего объекта</p>
+
+            <div class="phone-links">
+                <a href="tel:+996709088804" class="phone-card"><i class="fa-solid fa-phone"></i> +996 709 088 804</a>
+                <a href="https://wa.me/996555015180" target="_blank" class="phone-card" style="background:#E8F5E9; color:#2E7D32;"><i class="fa-brands fa-whatsapp"></i> +996 555 015 180</a>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form onsubmit="event.preventDefault(); alert('Спасибо за обращение! Наш менеджер свяжется с вами.');">
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" placeholder="Введите имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер телефона</label>
+                        <input type="tel" placeholder="+996 (___) __-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Интересующий пакет</label>
+                        <select>
+                            <option>Пакет «Эконом» (220 USD/м²)</option>
+                            <option>Пакет «Комфорт» (260 USD/м²)</option>
+                            <option>Пакет «Люкс» (300 USD/м²)</option>
+                            <option>Индивидуальный проект</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Площадь помещения (м²)</label>
+                        <input type="number" placeholder="Например: 60">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Рассчитать стоимость</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ЯМЭЙ ДЕКОР. Все права защищены. Бишкек, Кыргызстан.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
